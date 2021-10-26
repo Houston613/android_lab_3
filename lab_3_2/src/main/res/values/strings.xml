@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">lab3.2</string>
+    <string name="about_about">That\'s About page</string>
+    <string name="first_activity">That\'s first page</string>
+    <string name="second_activity">That\'s second page</string>
+    <string name="third_activity">That\'s third page</string>
+
+    <string name="to_first_activity">teleport you to first page</string>
+    <string name="to_second_activity">teleport you to second page</string>
+    <string name="to_third_activity">teleport you to third page</string>
+    <string name="to_about">Into The void(to about)</string>
+</resources>
