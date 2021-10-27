@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab3_5</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="to_second_frag">heading on the second fragment</string>
+    <string name="second_fragment">Second fragment</string>
+    <string name="to_first_frag">Heading on the first</string>
+    <string name="to_third_frag">Heading on the third</string>
+    <string name="about_about">That is about</string>
+    <string name="to_about">intoT the void</string>
+</resources>
