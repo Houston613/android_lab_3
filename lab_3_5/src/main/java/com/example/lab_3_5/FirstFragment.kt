@@ -32,7 +32,7 @@ class FirstFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == R.id.about) {
-            Navigation.findNavController(binding.root)
+            Navigation.findNavController(binding.root).navigate(R.id.global_about)
             true
         } else
             super.onOptionsItemSelected(item)
