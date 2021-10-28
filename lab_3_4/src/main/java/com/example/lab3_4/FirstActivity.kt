@@ -9,6 +9,9 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lab3_4.databinding.FirstActivityBinding
+
+import kotlin.random.Random.Default.nextInt
+
 //adb shell dumpsys activity activities | grep 'Hist #' | grep 'com.example.lab3_4'
 
 class FirstActivity : AppCompatActivity() {
@@ -17,11 +20,18 @@ class FirstActivity : AppCompatActivity() {
 
         val binding = FirstActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.button1To2.setOnClickListener{toSecondActivity()}
+        binding.random.setOnClickListener{toRandom()}
     }
 
-    private fun toSecondActivity() {
-        startActivity(Intent(this, SecondActivity::class.java))
+    private fun toRandom(){
+        val random = nextInt(3)
+        when(random){
+            0 -> startActivity(Intent(this,
+                FirstActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            1 -> startActivity(Intent(this, SecondActivity::class.java))
+            2 -> startActivity(Intent(this,ThirdActivity::class.java))
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -32,7 +42,7 @@ class FirstActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == R.id.about) {
-            startActivity(Intent(this, AboutActivity::class.java).addFlags(FLAG_ACTIVITY_NO_HISTORY))
+            startActivity(Intent(this, AboutActivity::class.java))
             true
         } else
             super.onOptionsItemSelected(item)

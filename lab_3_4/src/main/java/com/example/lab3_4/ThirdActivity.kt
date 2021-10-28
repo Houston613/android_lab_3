@@ -19,12 +19,11 @@ class ThirdActivity :AppCompatActivity() {
     }
 
     private fun toFirstActivity() {
-        setResult(RESULT_OK)
-        finish()
+        startActivity(Intent(this, FirstActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
     }
 
     private fun toSecondActivity() {
-        finish()
+        startActivity(Intent(this, SecondActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,11 +33,10 @@ class ThirdActivity :AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.about) {
-            startActivity(Intent(this, AboutActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY))
-            return true
-        }
-        else
-            return super.onOptionsItemSelected(item)
+        return if (item.itemId == R.id.about) {
+            startActivity(Intent(this, AboutActivity::class.java))
+            true
+        } else
+            super.onOptionsItemSelected(item)
     }
 }

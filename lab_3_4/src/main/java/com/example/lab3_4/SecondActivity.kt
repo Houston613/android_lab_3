@@ -21,22 +21,13 @@ class SecondActivity :AppCompatActivity() {
     }
 
     private fun toFirstActivity() {
-        setResult(RESULT_OK)
-        finish()
+        startActivity(Intent(this, FirstActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
     }
 
     private fun toThirdActivity() {
-        startActivityForResult(Intent(this, ThirdActivity::class.java), codeFromThird)
+        startActivity(Intent(this, ThirdActivity::class.java))
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == codeFromThird) {
-            if (resultCode == RESULT_OK) {
-                finish()
-            }
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
@@ -44,12 +35,11 @@ class SecondActivity :AppCompatActivity() {
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.about) {
-            startActivity(Intent(this, AboutActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY))
-            return true
-        }
-        else
-            return super.onOptionsItemSelected(item)
+        return if (item.itemId == R.id.about) {
+            startActivity(Intent(this, AboutActivity::class.java))
+            true
+        } else
+            super.onOptionsItemSelected(item)
     }
 
 }

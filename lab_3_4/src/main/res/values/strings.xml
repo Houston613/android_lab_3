@@ -9,4 +9,5 @@
     <string name="to_second_activity">teleport you to second page</string>
     <string name="to_third_activity">teleport you to third page</string>
     <string name="to_about">Into The void(to about)</string>
+    <string name="to_random">try to guess where you will be</string>
 </resources>
