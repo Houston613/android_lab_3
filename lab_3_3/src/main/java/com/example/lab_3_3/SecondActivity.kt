@@ -21,7 +21,7 @@ class SecondActivity :AppCompatActivity() {
     }
 
     private fun toFirstActivity() {
-        startActivity(Intent(this, FirstActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        startActivity(Intent(this, FirstActivity::class.java))
     }
 
     private fun toThirdActivity() {
