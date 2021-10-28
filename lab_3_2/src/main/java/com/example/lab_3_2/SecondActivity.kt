@@ -22,7 +22,6 @@ class SecondActivity :AppCompatActivity() {
     }
 
     private fun toFirstActivity() {
-        setResult(RESULT_OK)
         finish()
     }
 

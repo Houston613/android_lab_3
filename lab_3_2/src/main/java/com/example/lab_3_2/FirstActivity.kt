@@ -20,7 +20,7 @@ class FirstActivity : AppCompatActivity() {
     }
 
     private fun toSecondActivity() {
-        startActivity(Intent(this, SecondActivity::class.java))//возращает класс
+        startActivity(Intent(this, SecondActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
