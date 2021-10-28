@@ -30,11 +30,10 @@ class FirstActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.about) {
+        return if (item.itemId == R.id.about) {
             startActivity(Intent(this, AboutActivity::class.java))
-            return true
-        }
-        else
-             return super.onOptionsItemSelected(item)
+            true
+        } else
+            super.onOptionsItemSelected(item)
     }
 }

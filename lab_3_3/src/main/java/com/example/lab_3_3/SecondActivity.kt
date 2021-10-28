@@ -25,17 +25,9 @@ class SecondActivity :AppCompatActivity() {
     }
 
     private fun toThirdActivity() {
-        startActivityForResult(Intent(this, ThirdActivity::class.java), codeFromThird)
+        startActivity(Intent(this, ThirdActivity::class.java))
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == codeFromThird) {
-            if (resultCode == RESULT_OK) {
-                finish()
-            }
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
@@ -43,12 +35,11 @@ class SecondActivity :AppCompatActivity() {
         return true
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.about) {
+        return if (item.itemId == R.id.about) {
             startActivity(Intent(this, AboutActivity::class.java))
-            return true
-        }
-        else
-            return super.onOptionsItemSelected(item)
+            true
+        } else
+            super.onOptionsItemSelected(item)
     }
 
 }
