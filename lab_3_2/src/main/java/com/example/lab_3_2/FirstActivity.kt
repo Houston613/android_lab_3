@@ -12,13 +12,10 @@ import com.example.lab_3_2.databinding.FirstActivityBinding
 class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding = FirstActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.button1To2.setOnClickListener{toSecondActivity()}
     }
-
     private fun toSecondActivity() {
         startActivity(Intent(this, SecondActivity::class.java))
     }

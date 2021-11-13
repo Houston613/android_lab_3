@@ -5,6 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.lab_3_5.databinding.FirstFragBinding
 import com.example.lab_3_5.databinding.SecondFragBinding
 
@@ -28,12 +29,10 @@ class SecondFragment: Fragment() {
 
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.first_menu,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return if (item.itemId == R.id.about) {
             Navigation.findNavController(binding.root).navigate(R.id.global_about)
@@ -41,4 +40,5 @@ class SecondFragment: Fragment() {
         } else
             super.onOptionsItemSelected(item)
     }
+
 }

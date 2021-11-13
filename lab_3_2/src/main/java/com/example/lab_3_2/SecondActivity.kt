@@ -17,6 +17,8 @@ class SecondActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = SecondActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         binding.button2To1.setOnClickListener { toFirstActivity() }
         binding.button2To3.setOnClickListener { toThirdActivity() }
     }
@@ -36,6 +38,10 @@ class SecondActivity :AppCompatActivity() {
                 finish()
             }
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
